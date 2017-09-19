@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from contatos.views import main_contatos
+from contatos.views import main_contatos, deletar
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contatos/', main_contatos),
+    url(r'^deletar/(?P<contato_id>[0-9]+)', deletar),
 ]

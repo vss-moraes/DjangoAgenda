@@ -24,11 +24,17 @@
     <tr>
       <th>Nome</th>
       <th>Telefone</th>
+      <th>Remover</th>
     </tr>
     {% for contato in contatos %}
         <tr>
           <td>{{ contato.nome }}</td>
           <td>{{ contato.telefone }}</td>
+          <td>
+            <a href="/deletar/{{ contato.id }}" class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+          </td>
         </tr>
     {% endfor %}
 

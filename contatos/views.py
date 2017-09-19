@@ -14,3 +14,8 @@ def main_contatos(request):
 
     contatos = Contato.objects.all()
     return render(request, 'contatos.html', { 'contatos': contatos})
+
+def deletar(request, contato_id):
+    contato = Contato.objects.get(pk=contato_id)
+    contato.delete()
+    return HttpResponseRedirect('/contatos/')
